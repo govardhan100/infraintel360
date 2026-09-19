@@ -270,7 +270,9 @@
       <div class="container">
         <div class="contact-panel reveal">
           <div><span class="eyebrow" style="color: var(--lime);">Start with a conversation</span><h2>Let’s put your property in focus.</h2><p>Tell us what you are looking at, what changed, or what you need to decide. We’ll get back to you within one business day.</p></div>
-          <form class="contact-form" id="contactForm">
+          <form class="contact-form" id="contactForm" action="https://formsubmit.co/bhure.govardhan@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Infraintel360 call request" />
+            <input type="hidden" name="_template" value="table" />
             <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required /></div>
             <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" required /></div>
             <div class="field full"><label for="service">I need help with</label><select id="service" name="service"><option>Building audit</option><option>Damage assessment</option><option>Cost estimation</option><option>Not sure yet</option></select></div>
@@ -311,11 +313,6 @@
     }, { threshold: 0.14 });
     document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
 
-    document.getElementById('contactForm').addEventListener('submit', (event) => {
-      event.preventDefault();
-      document.getElementById('formMessage').classList.add('visible');
-      event.target.reset();
-    });
   </script>
 </body>
 </html>
