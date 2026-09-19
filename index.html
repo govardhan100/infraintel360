@@ -273,12 +273,13 @@
           <form class="contact-form" id="contactForm" action="https://formsubmit.co/bhure.govardhan@gmail.com" method="POST">
             <input type="hidden" name="_subject" value="New Infraintel360 call request" />
             <input type="hidden" name="_template" value="table" />
+            <input type="hidden" name="_next" value="https://govardhan100.github.io/infraintel360/?submitted=1#contact" />
             <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" required /></div>
             <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" required /></div>
             <div class="field full"><label for="service">I need help with</label><select id="service" name="service"><option>Building audit</option><option>Damage assessment</option><option>Cost estimation</option><option>Not sure yet</option></select></div>
             <div class="field full"><label for="message">A little about the project</label><textarea id="message" name="message" rows="2"></textarea></div>
             <button class="button-primary form-submit" type="submit">Request a call <span aria-hidden="true">↗</span></button>
-            <p class="form-message" id="formMessage">Thanks, we’ve got your note. We’ll be in touch shortly.</p>
+            <p class="form-message" id="formMessage">Thanks, we’ve got your note. Infraintel360 will connect with you within a couple of business days.</p>
           </form>
         </div>
       </div>
@@ -312,6 +313,10 @@
       });
     }, { threshold: 0.14 });
     document.querySelectorAll('.reveal').forEach((element) => revealObserver.observe(element));
+
+    if (new URLSearchParams(window.location.search).get('submitted') === '1') {
+      document.getElementById('formMessage').classList.add('visible');
+    }
 
   </script>
 </body>
